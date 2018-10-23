@@ -1,14 +1,18 @@
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-
-  <h2>Hello World</h2>
-
+  <div class="container">
+  <h1 class="jumbotron">Welcome to {{ title }}!</h1>
+  <h2>Recipes</h2>
   <ul>
     <li *ngFor="let item of recipes; let i = index">
-      <b>{{item.name}}</b><br>{{item.directions}}<br>{{item.ingredients}}
+      <b>{{item.name}}</b><button (click)="editRecipe(item)">Edit</button><br>{{item.directions}}<br>{{item.ingredients}}
     </li>
   </ul>
+<div *ngIf="selectedRecipe">
+<h3>{{selectedRecipe.name}}</h3>
+  <label>Enter New Recipe Name:</label>
+<input [(ngModel)]="selectedRecipe.name">
+<button (click)="finishedEditing()">Done</button>
+</div>
+</div>
 
 
 

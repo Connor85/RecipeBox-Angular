@@ -18,5 +18,15 @@ export class AppComponent {
     let newRecipe = new Recipe(name, ingredients, directions);
     this.recipes.unshift(newRecipe);
   }
+
+  selectedRecipe: Recipe = null;
+  
+  editRecipe(clickedRecipe){
+    this.selectedRecipe = clickedRecipe;
+  }
+
+  finishedEditing(){
+    this.selectedRecipe = null;
+  }
 }
 
