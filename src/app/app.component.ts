@@ -15,11 +15,13 @@ export class AppComponent {
   ];
 
   addRecipe(name, ingredients, directions) {
-    let newRecipe = new Recipe(name, ingredients, directions);
-    this.recipes.unshift(newRecipe);
+    this.newRecipe = new Recipe(name, ingredients, directions);
+    this.recipes.unshift(this.newRecipe);
+    this.newRecipe = new Recipe("", "", "");
   }
 
   selectedRecipe: Recipe = null;
+  newRecipe: Recipe = new Recipe("", "", "");
   
   editRecipe(clickedRecipe){
     this.selectedRecipe = clickedRecipe;

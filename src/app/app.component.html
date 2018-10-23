@@ -12,6 +12,12 @@
 <input [(ngModel)]="selectedRecipe.name">
 <button (click)="finishedEditing()">Done</button>
 </div>
+
+<label for="">name</label>
+<input [(ngModel)]="newRecipe.name" type="text" class="form-control">
+<input [(ngModel)]="newRecipe.ingredients" type="text" class="form-control">
+<input [(ngModel)]="newRecipe.directions" type="text" class="form-control">
+<button (click)="addRecipe(newRecipe.name, newRecipe.ingredients, newRecipe.directions)">Add Recipe</button>
 </div>
 
 
